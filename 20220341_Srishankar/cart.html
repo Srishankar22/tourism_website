@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <title>Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" href="navbar.css"> 
+	<link rel="stylesheet" href="maincss.css">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="footer.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+</head>
+
+<body>
+    <header class="header">
+		<a href="#" class="logo">
+			<img src="img/logo/logo.png" alt="logo">
+		</a>
+			
+		<nav class="navbar">
+			<a href="home.html">Home</a>
+			<a href="comments.html">Comments</a>
+			<a href="shop.html" class="active">Shop</a>
+			<a href="Gallery.html">Gallery</a>
+			<a href="Quizmain.html">Quiz</a>
+			<a href="sitemap.html">Sitemap</a>
+			<a href="StudentDetails.html">About US</a>
+		</nav>
+	</header>
+
+
+    
+    <div class='cart-content'>
+<br><br>
+        
+        <div class="back-container">
+            <div class="goback">
+                <a href="shop.html"><img src="img/icons/left-arrow.png" alt="Back icon"></a>
+            </div>
+        </div>
+        
+
+        
+        <div class="buyer-info">
+            <h2>Billing Address</h2>
+            <div class="cart-form-container">
+                <div class="error"></div>
+                <form class="cart-form" method="GET" id="cart-form">
+                    <div class="info-row">
+                        <div class="info-coulmn">
+                            <label for="fname">First Name<img src="checked.png" alt="checking" class="pad tick" id="first-name" width="14" height="14"></label>
+                            <input type="text" name="fname" id="fname">
+                        </div>
+                        <div class="info-coulmn">
+                            <label for="lname">Last Name<img src="checked.png" alt="checking" class="pad tick" id="last-name" width="14" height="14"></label>
+                            <input type="text" name="lname" id="lname">
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-coulmn">
+                            <label for="mnum">Mobile Number<img src="checked.png"  alt="checking" class="pad tick" id="mobile-num" width="14" height="14"></label>
+                            <input type="text" name="mnum" id="mnum">
+                        </div>
+                        <div class="info-coulmn">
+                            <label for="email">Email Address<img src="checked.png" alt="checking" class="pad tick" id="email-address" width="14" height="14"></label>
+                            <input type="text" name="email-address" id="email">
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-coulmn">
+                            <label for="address">Address<img src="checked.png" alt="checking" class="pad tick" id="bill-address" width="14" height="14"></label>
+                            <input type="text" name="address" id="address">
+                        </div>
+                        <div class="info-coulmn">
+                            <label for="city">City<img src="checked.png" alt="checking" class="pad tick" id="place" width="14" height="14"></label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-coulmn">
+                            <label for="country">Country<img src="checked.png" alt="checking" class="pad tick" id="nation" width="14" height="14"></label>
+                            <input type="text" name="country" id="country">
+                        </div>
+                        <div class="info-coulmn">
+                            <label for="zipcode">Post Code<img src="checked.png" alt="checking" class="pad tick" id="zip-code" width="14" height="14"></label>
+                            <input type="text" name="zipcode" id="zipcode">
+                        </div>
+                    </div>
+                    <div class="cart-buttons">
+                        <button data-modal-target="#popup-modal" type="submit" onclick="return formValidation();"
+                            id="myBtn">Finish Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Greeting <span class="userName">n</span>, Payment Details</h1>
+                    <button class="close">Edit</button>
+                </div>
+                <div class="modal-body">
+                    <div class="summary-details">
+                        <h3>Payment Details</h3>
+                        <div class="modal-row">
+                            <div class="modal-column">
+                                <label for="fname">First Name</label>
+                                <span class="fname-span">FName</span>
+                            </div>
+                            <div class="modal-column">
+                                <label for="lname">Last Name</label>
+                                <span class="lname-span">LName</span>
+                            </div>
+                        </div>
+                        <div class="modal-row">
+                            <div class="modal-column">
+                                <label for="mnum">Mobile Number</label>
+                                <span class="mnum-span">Mobile</span>
+                            </div>
+                            <div class="modal-column">
+                                <label for="email">Email Address</label>
+                                <span class="email-span">EmailAddress</span>
+                            </div>
+                        </div>
+                        <div class="modal-row">
+                            <div class="modal-column">
+                                <label for="address">Address</label>
+                                <span class="address-span">Address</span>
+                            </div>
+                            <div class="modal-column">
+                                <label for="city">City</label>
+                                <span class="city-span">CityName</span>
+                            </div>
+                        </div>
+                        <div class="modal-row">
+                            <div class="modal-column">
+                                <label for="country">Country</label>
+                                <span class="country-span">CountryName</span>
+                            </div>
+                            <div class="modal-column">
+                                <label for="zipcode">Post Code</label>
+                                <span class="zip-span">ZipCode</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+					    <div class="modal-row">
+							<div class="modal-column">
+								<label>Card Number<img src="checked.png" alt="checking" class="pad2 tick" id="mark1" width="14" height="14"></label>
+								<input type="text" id="card-num" name="card-num">
+							</div>
+							<div class="modal-column">
+								<label>Card Holder Name<img src="checked.png" alt="checking" class="pad2 tick" id="mark3" width="14" height="14"></label>
+								<input type="text" id="card-name" name="card-name">
+							</div>	
+						</div>
+						<div class="modal-row">
+						    <div class="modal-column"> 
+								<label>Expiry Date</label>
+								<input type="date" id="exp-date" name="exp-date">
+							</div>
+							<div class="modal-column">
+								<label>Security Code<img src="checked.png" alt="checking" class="pad2 tick" id="mark2" width="14" height="14"></label>
+								<input type="text" id="sec-code" name="sec-code">
+							</div>	
+						</div>	
+					</div>
+                    <div class="cart-buttons">
+                        <button type="submit" onclick="return paymentDone();" id="doneBtn">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    <div id="doneModal" class="done-modal">
+
+        <div class="done-content">
+            <img src="img/icons/done.png" alt="done">
+
+        </div>
+
+    </div>
+    <footer>
+			<div class="footer-content">
+						
+				<h4>EXPLORER</h4>
+				<h5>-DISCOVER THE WONDERS OF SRI LANKA- </h5>
+						
+				<ul class="socials">
+					<li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+					<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<p>made by <a href="PageEditor.html">Sumatharan Srishankar</a></p>
+			</div>
+	</footer>
+    <script src="script.js "></script>
+		
+</body>
+
+</html>
